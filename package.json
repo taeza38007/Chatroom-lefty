@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/taeza38007/Chatroom-lefty#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2",
     "socket.io": "^4.5.3"
   },
   "devDependencies": {

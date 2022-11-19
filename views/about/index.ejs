@@ -1,1 +1,37 @@
 <h1>BOUT BOIS</h1>
+
+<p>This example uses the addEventListener() method to attach a "keypress" event to an input element.</p>
+
+<input type="text" id="demo" style="color:white">
+<p id="box"></p>
+
+<input type="text" id="gueseBox" style="color:white">
+
+
+<script>
+    const demo = document.getElementById("demo");
+    const box = document.querySelector('#box');
+    const guese = document.querySelector('#gueseBox');
+
+    demo.addEventListener("keyup", myFunction);
+
+    guese.addEventListener("keyup", () => {
+        if(guese.value == box.textContent){
+            guese.style.backgroundColor = "green";
+        }else{
+            guese.style.backgroundColor = "white";
+        }
+    })
+
+    function myFunction() {
+        document.getElementById("demo").style.backgroundColor = "blue";
+        box.textContent = demo.value;
+
+        if(demo.value == guese.textContent){
+            guese.style.backgroundColor = "green";
+        }else{
+            guese.style.backgroundColor = "white";
+        }
+
+    }
+</script>
