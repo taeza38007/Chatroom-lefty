@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;1,100&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,700;1,200;1,400&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.header {
+    margin: 0;
+}
+
+.logintext{
+    padding: 0px;
+    margin: 0px;
+    color: pink;
+}
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+
+.gif{
+    width:90%; 
+    padding-left:4rem;
+    padding-top: 2rem;
+}
+.gif-signup{
+    width:80%;
+    height:10%;
+    padding-left: 3.98rem;
+    text-align: center;
+}
+.gifhome{
+    width:60%;
+    height:10%;
+    padding-left: 3rem;
+}
+
+.login {
+    
+    /* margin-top: 100px; */
+    padding-top: 40px;
+    width: 420px;
+    height: 650px;
+    border: 1px solid #CCC;
+    background: url(https://media4.giphy.com/media/Ha6xdymclg2pBgwuw3/giphy.gif) center center no-repeat;
+    /* background: url(https://media4.giphy.com/media/Ha6xdymclg2pBgwuw3/giphy.gif) center center no-repeat; */
+    background-size: cover;
+    margin: 30px auto;
+    border-radius: 20px;
+}
+.login .form {
+    width: 100%;
+    height: 100%;
+    padding: 15px 25px;
+}
+/* .login .form h2 {
+    color: #FFF;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+} */
+.login .form input {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    background: rgba(255,255,255,.5);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 0 15px;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 19px;
+}
+.login .form input:focus {
+    border: 1px solid rgba(255,255,255,.8);
+    outline: none;
+}
+::-webkit-input-placeholder {
+    color: rgb(234, 234, 234);
+}
+.login .form input.submit {
+    background: rgba(255,255,255,.9);
+    color: #444;
+    font-size: 15px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.login .form button.submit {
+    background: rgba(255,255,255,.9);
+    border: 0px;
+    border-radius: 5px;
+    color: #444;
+    width: 100%;
+    height: 3rem;
+    font-size: 16px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.login .form button.submit:hover {
+    background:#FF33FF;
+    border: 0px;
+    border-radius: 5px;
+    color: #7FFFD4;
+    width: 100%;
+    height: 3rem;
+    font-size: 25px;
+    margin-top: 40px;
+    /* font-weight: bold; */
+}
+
+
+#footer {
+    /* padding-top: 8px; */
+    text-align: center;
+    
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 8%;
+    background: #5a5a5a;
+}
+
+.cursor {
+    position: relative;
+}
+.cursor i {
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    background-color: gray;
+    left: 5px;
+    top: 10%;
+    animation-name: blink;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.cursor input:focus + i {
+    display: none;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

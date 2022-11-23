@@ -1,0 +1,37 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    margin: 0;
+}
+
+.login {
+    
+    /* margin-top: 100px; */
+    padding-top: 40px;
+    width: 420px;
+    height: 750px;
+    border: 1px solid #CCC;
+    background: url(https://media4.giphy.com/media/Ha6xdymclg2pBgwuw3/giphy.gif) center center no-repeat;
+    /* background: url(https://media4.giphy.com/media/Ha6xdymclg2pBgwuw3/giphy.gif) center center no-repeat; */
+    background-size: cover;
+    margin: 30px auto;
+    border-radius: 20px;
+}
+
+#nav{
+    background-color: #FFC0CB;
+    height: 4rem;
+    padding-top: 1.5rem;
+}
+
+ul{
+    font-size:1.5rem;
+}
+li{
+    padding-left: 4rem;
+    text-align: left;
+}

@@ -18,8 +18,11 @@ mongoose.connect(process.env.DATABASE_URL)
 const PORT = process.env.PORT || 8000;
 
 const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/login');
+const signupRouter = require('./routes/signup');
 const aboutRouter = require('./routes/about');
 const errorRouter = require('./routes/404');
+const chatroomRouter = require('./routes/chatroom');
 
 
 app.set('view engine', 'ejs');
@@ -31,7 +34,12 @@ app.use(express.static('public'));
 app.use(express.urlencoded( { extended: true }));
 
 app.use('/', indexRouter);
+app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 app.use('/about', aboutRouter);
+app.use('/chatroom', chatroomRouter);
+
+
 app.use(errorRouter);
 
 server.listen(PORT, () => {
