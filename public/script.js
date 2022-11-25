@@ -48,16 +48,21 @@ const passwdRegex = /^[a-z0-9!~*#$%^&()_;'.,/+]+$/i;
 
 button.addEventListener('click',(e) => {
     // e.preventDefault();
-    if(!usernameRegex.test(data.username.value) || data.username.value.length > 15){
+    if(!usernameRegex.test(data.username.value)){
         e.preventDefault();
-        alert(`Username can't contain special characters 🙅`);  
+        alert(`👮‍♀️ Username can't be empty 🙅`);  
+    }else if(data.username.value.length > 10){
+        e.preventDefault();
+        alert(`💂‍♀️ Username can't contain more than 10 characters 👩‍🏫`);  
     }else if(!passwdRegex.test(data.passwd.value)){
         e.preventDefault();
-        alert(`Plz choose a new password ⚔️`); 
+        alert(`🦹‍♂️ Password can't be empty ⚔️`); 
     }else if(data.passwd.value.length <= 2){
         e.preventDefault();
         alert(`Password must have a least 3 characters 🙊`); 
-
+    }else if(data.passwd.value.length > 15){
+        e.preventDefault();
+        alert(`💂‍♀️ Password can't contain more than 15 characters 👩‍🏫`);  
     }
 
 

@@ -13,7 +13,7 @@ const addUser = (res, username, password) => {
     });
 
     user.save()
-        .then(result => res.send(result))
+        // .then(result => res.send(result))
         .catch(err => console.log(err))
     // res.redirect('/');
 };

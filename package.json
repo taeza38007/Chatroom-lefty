@@ -19,6 +19,7 @@
   "homepage": "https://github.com/taeza38007/Chatroom-lefty#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",

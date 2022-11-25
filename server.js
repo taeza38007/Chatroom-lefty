@@ -12,6 +12,8 @@ const io = new Server(server);
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+
 
 const mongoose = require('mongoose');
 const connection = mongoose.connect(process.env.DATABASE_URL)
@@ -39,6 +41,7 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true }));
 
 app.use(ses);
+app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);

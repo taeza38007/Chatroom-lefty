@@ -3,12 +3,11 @@ const router = express.Router();
 const User = require('../models/users');
 const bcrypt = require('bcryptjs');
 const user = require('../controllers/users');
+const flash = require('connect-flash');
 
 router.get('/', (req, res) => {
-    res.render('signup/signup', { title: 'Sign up PLZ'});
+    return res.render('signup/signup', { title: 'Sign up PLZ'});
 });
-
-
 
 router.post('/', async (req, res) => {
     // res.render('login/log', { title: 'Log In!!!!!'});
@@ -24,24 +23,17 @@ router.post('/', async (req, res) => {
     if (!checkUser){
         user.addUser(res, username, hashedPassword);
         console.log('User has been added!');
-        // res.json({ message: "Plz choose a new one 👻" });
-        res.render('login/log', { title: '🧠'});
+        
+        req.flash('message', 'Sign up successfully!✍️🥳');
+        res.redirect('/login');
+
+        // res.render('login/log', { title: '🧠', message:'yo'});
         // res.status(200).json({ message: "Your choosen username has been used. Plz choose a new one 👻" });
     }
     else{
         
-        res.status(200).json({ message: "Your choosen username has been used. Plz choose a new one 👻" });
+        return res.status(200).json({ message: "Your choosen username has been used. Plz choose a new one 👻" });
     }
-
-
-
-
-// TODO : Find user input username if its matched with one in the Database
-    console.log(`username: ${username}\npassword: ${password}\nsalted: ${hashedPassword}`);
-
-
-
-    // res.redirect('/about',{ title: 'Log In!!!!!'});
 })
 
 module.exports = router;

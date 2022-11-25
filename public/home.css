@@ -35,3 +35,12 @@ li{
     padding-left: 4rem;
     text-align: left;
 }
+.noti{
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #000000;
+    background-color: #FF33FF;
+    /* margin: 1rem; */
+    padding: 1rem;
+    font-size: 2rem;
+}

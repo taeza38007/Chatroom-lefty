@@ -1,3 +1,10 @@
+<% if(message.length > 0) { %>
+    <div class="noti" id="alertbox" role="alert">
+        <%= message %>
+    </div>
+<% } %>
+
+
 <div class="login">
     <div class="form">
         <form action="/" id="userinput" method="POST">
@@ -5,8 +12,8 @@
             <img class="gif" src="https://media4.giphy.com/media/4c70EiUVkqJeD2k3nv/giphy.gif?cid=3b899dd61a222a74c83a98e2beb01599bc2c5fa80c1a1146&rid=giphy.gif&ct=ts" alt="">
             <h2 style="text-align: center;" class="logintext">Log in</h2>
             <!-- <a href="https://media4.giphy.com/media/Pfbbh55Js9t0jGiPaK/giphy.gif?cid=3b899dd62621f8d4572efca839cdac511790d0bd8e1230c1&rid=giphy.gif&ct=s">test</a> -->
-            <div class="cursor"><input autofocus autocomplete="off" class="rq-form-element" id="username" type="text" placeholder="Username..."></div>
-            <input type="password" id="passwd" placeholder="Password...">
+            <div class="cursor"><input autofocus autocomplete="off" class="rq-form-element" id="username" name="username" type="text" placeholder="Username..."></div>
+            <input type="password" id="passwd" name="password" placeholder="Password...">
             <!-- <input type="submit" value="Let's go!" class="submit"> -->
             <button class="submit" id="submitbt" type="submit">Let's go!</button>
         </form>
@@ -14,4 +21,13 @@
     </div>
 </div>
 <script src="/script.js"></script>
+<script>
+    const alertbox = document.querySelector("#alertbox");
+    setTimeout(() => {
+        // alertbox.textContent = "HEYHEYEHYEHEY";
+        alertbox.style.display = 'none';
+    }
+    ,3000);
+
+</script>
 
