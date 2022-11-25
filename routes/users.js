@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Home Boi'});
 });
 
+
 router.get('/add-user', (req, res) => {
     const user = new User({
         name: 'IDONTPROVIDEPASSWOED'

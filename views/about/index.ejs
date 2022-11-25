@@ -2,11 +2,19 @@
 
 <p>This example uses the addEventListener() method to attach a "keypress" event to an input element.</p>
 
-<input type="text" id="demo" style="color:white">
+<input type="text" id="demo" name="box1" style="color:white">
 <p id="box"></p>
 
-<input type="text" id="gueseBox" style="color:white">
+<input type="text" id="gueseBox" name="box2" style="color:white">
+<br>
 
+
+<form method="POST">
+    <input type="text" name="box3" style="margin-top: 20px;">
+    <input type="text" name="box4" style="margin-top: 20px;">
+    
+    <button type="submit">HERE</button>
+</form>
 
 <script>
     const demo = document.getElementById("demo");

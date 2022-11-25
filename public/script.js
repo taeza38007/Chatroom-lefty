@@ -11,10 +11,10 @@ const username = document.querySelector('#username');
 const passwd = document.querySelector('#passwd');
 
 username.addEventListener('keyup',() => {
-    // console.log(username.value);
+    console.log(username.value);
     // username.setAttribute('style','color:yellow;')
     // username.setAttribute('style','font-size:4rem;')
-    console.log(username.value.length);
+    // console.log(username.value.length);
     
     username.style.backgroundColor = '#F38DF3';
     username.style.color = '#000000';
@@ -30,7 +30,7 @@ username.addEventListener('keyup',() => {
 
 
 passwd.addEventListener('keyup',() => {
-    // console.log(passwd.value);
+    console.log(passwd.value);
     passwd.style.fontSize = '1.8rem';
     // passwd.style.color = '#F38DF3';
     passwd.style.backgroundColor = '#F38DF3';

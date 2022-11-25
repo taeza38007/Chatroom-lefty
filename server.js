@@ -10,8 +10,11 @@ const server =http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL)
+const connection = mongoose.connect(process.env.DATABASE_URL)
     .then(result => console.log('connected to MongoDB! 🥳👏🏆'))
     .catch(err => console.log(err.message));
 
@@ -24,6 +27,7 @@ const aboutRouter = require('./routes/about');
 const errorRouter = require('./routes/404');
 const chatroomRouter = require('./routes/chatroom');
 
+const ses = require('./controllers/sessions');
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
@@ -31,7 +35,10 @@ app.set('layout', 'layouts/layout');
 
 app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(express.json());
 app.use(express.urlencoded( { extended: true }));
+
+app.use(ses);
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
@@ -41,6 +48,8 @@ app.use('/chatroom', chatroomRouter);
 
 
 app.use(errorRouter);
+
+
 
 server.listen(PORT, () => {
     console.log(`listening on port: ${PORT}`);

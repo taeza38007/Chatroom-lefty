@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    res.render('index', { title: 'Home!!!!!'});
+    res.render('login/log');
 })
 
 module.exports = router;
