@@ -3,7 +3,13 @@
         <!-- <div style="padding-top: 2%;">CHATROOM</div> -->
         <span style="padding-top:2%; padding-left:2rem;"><a href="/about">CHATROOM</a></span>
         
-        <span  style="float: right; padding-right:5rem;"><a href="/login">Sign Out</a></span>
+        <span style="float: right; margin-right: 2rems;"><% if (locals.username) { %>
+            <%= locals.username %>
+            <%} else { %>
+                <span style="float: right;"></span>
+            <% } %>
+
+        <span  style="float: right; padding-right:5rem; margin-left:2rem"><a href="/signout">Sign Out</a></span>
     </nav>
     
 </div>

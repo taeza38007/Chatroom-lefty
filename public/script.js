@@ -50,7 +50,7 @@ button.addEventListener('click',(e) => {
     // e.preventDefault();
     if(!usernameRegex.test(data.username.value)){
         e.preventDefault();
-        alert(`👮‍♀️ Username can't be empty 🙅`);  
+        alert(`👮‍♀️ Username can't be empty or contain special characters 🙅`);  
     }else if(data.username.value.length > 10){
         e.preventDefault();
         alert(`💂‍♀️ Username can't contain more than 10 characters 👩‍🏫`);  

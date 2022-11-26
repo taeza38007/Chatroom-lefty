@@ -1,10 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const Session = require('../controllers/sessions');
+const flash = require('connect-flash');
 
 
 
-router.get('/', (req, res) => {
-    res.redirect('login');
+router.get('/', async (req, res) => {
+    // Session.isLogin(req, res);
+
+    if (req.session){
+        await req.session.destroy();
+        console.log('Session is destroyed....');
+        console.log(req.session);
+    }else{
+        console.log('no session found');
+    }
+
+    // res.redirect('login');
+    // req.flash('welcome', 'Welcome back!👋🥳');
+    // res.render('index',{ title: "Welcome home!", views: req.session.viewCount, welcome: req.flash('welcome') } );
 })
 
 router.post('/', (req, res) => {

@@ -1,3 +1,9 @@
+<% if(welcome.length > 0) { %>
+    <div class="noti" id="alertbox" role="alert">
+        <%= welcome %>
+    </div>
+<% } %>
+
 <span style="text-align: center;"><h1>You have visited the page <%= views %> times!</h1></span>
 <div class="login">
         <ul class="logintext" style="text-align:center;">
@@ -20,4 +26,12 @@
 
     </div>
 </div>
+<script>
+    const alertbox = document.querySelector("#alertbox");
+    setTimeout(() => {
+        // alertbox.textContent = "HEYHEYEHYEHEY";
+        alertbox.style.display = 'none';
+    }
+    ,3000);
 
+</script>
