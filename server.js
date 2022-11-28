@@ -9,6 +9,7 @@ const http = require('http');
 const server =http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
+require('./controllers/socket')(io);
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
@@ -55,7 +56,6 @@ app.use('/chatroom', chatroomRouter);
 
 
 app.use(errorRouter);
-
 
 
 server.listen(PORT, () => {

@@ -9,7 +9,7 @@ html, body {
 }
 
 .login {
-    
+    overflow:auto;
     /* margin-top: 100px; */
     padding-top: 40px;
     width: 420px;

@@ -19,6 +19,8 @@ router.post('/', async (req, res) => {
     let hashedPassword = await user.hashPassword(password); 
 
     // const yoyo = 
+
+// OPTIMIZE: find____________________________________________________________________
     let checkUser = await User.findOne({ username: username });
     if (!checkUser){
         user.addUser(res, username, hashedPassword);

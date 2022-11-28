@@ -1,37 +1,43 @@
+
 <% if(welcome.length > 0) { %>
     <div class="noti" id="alertbox" role="alert">
         <%= welcome %>
     </div>
 <% } %>
+<h1 id="userCount" style="text-align:center;"></h1>
 
-<span style="text-align: center;"><h1>You have visited the page <%= views %> times!</h1></span>
+<!-- <span style="text-align: center;"><h1>You have visited the page <%= views %> times!</h1></span> -->
 <div class="login">
         <ul class="logintext" style="text-align:center;">
-            <img class="gifhome" src="https://media4.giphy.com/media/yyV538rh2j9S4TgRnM/giphy.gif?cid=3b899dd61a222a74c83a98e2beb01599bc2c5fa80c1a1146&rid=giphy.gif&ct=ts" alt="">
+            <img style="padding-bottom: 20px;" class="gifhome" src="https://media4.giphy.com/media/yyV538rh2j9S4TgRnM/giphy.gif?cid=3b899dd61a222a74c83a98e2beb01599bc2c5fa80c1a1146&rid=giphy.gif&ct=ts" alt="">
             <br>
-            <h1>Choose room</h1>
+            <h1 style="padding-bottom: 20px;">Choose rooms</h1>
             <li>
-                <div style="margin-right:30px; background-color:aquamarine" "><a href="#">Main chatroom</a></div>
+                <div style="margin-right:30px;" "><a href="/chatroom" style=" text-decoration: none; color:aquamarine">Main chatroom</a></div>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">Programming</a>
             </li>
             <li>
                 <a href="#">Gaming</a>
             </li>
-            
+            -->
         </ul>
         <!-- <form id="userinput">
             <!-- <img style="width:100%; padding-right: 5rem;" src="https://media4.giphy.com/media/Pfbbh55Js9t0jGiPaK/giphy.gif?cid=3b899dd62621f8d4572efca839cdac511790d0bd8e1230c1&rid=giphy.gif&ct=s" alt=""> -->
-
-    </div>
 </div>
+
+
 <script>
+    let userCount = document.querySelector('#userCount');
+    // userCount.innerHTML = ;
+
+
     const alertbox = document.querySelector("#alertbox");
     setTimeout(() => {
         // alertbox.textContent = "HEYHEYEHYEHEY";
         alertbox.style.display = 'none';
     }
     ,3000);
-
 </script>
+

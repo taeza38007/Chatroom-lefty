@@ -46,7 +46,7 @@ const isLogin = (req, res) => {
         console.log('match user session ID');
         req.flash('welcome', 'Welcome!✍️🥳');
         // res.redirect('/home')
-        res.render('index',{ title: "Welcome home!", views: req.session.viewCount, welcome: req.flash('welcome'),username:req.session.username } );
+        res.render('index',{ title: "Welcome home!", layout:'layouts/chatlayout', views: req.session.viewCount, welcome: req.flash('welcome'),username:req.session.username } );
         // next();
     }
 };
