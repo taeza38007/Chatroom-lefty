@@ -5,9 +5,23 @@
 </div>
 
 <div class="login">
-    <div id="boxes"><ul id="messages">
-
+    <div id="boxes">
+        <ul id="messages">
+            <!-- <li style="color:black;background-color:#FFC0CB;"">Hello welcome to the Chatroom!</li> -->
+            <% for(const user of chathis) { %>
+                
+                <% if (username === user.username){ %>
+                <div style="text-align:right;">
+                    <li style="background-color:limegreen;border-radius:17px; display:inline-flex;"><%= user.username %>: <%= user.text %></li>
+                </div>
+                <%}else{ %>
+                    <div>
+                        <li><%= user.username %>: <%= user.text %></li>
+                    </div>
+                <% } %>
+            <% } %>
     </ul></div>
+
     <form action="" id="form">
         <input autofocus autocomplete="off" id="input"><button id="but">Send</button>
     </form>

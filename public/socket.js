@@ -67,20 +67,21 @@ socket.on('userList',(data) => {
 
     
     // console.log(`namenav ${namenav.textContent}`);
+//OPTIMIZE: chat history___________________________________   
 
-    for(let i = 0; i < chathisUser.length; i++){
-        let item = document.createElement('li');
-        // console.log(chathisUser[i]);
-        // console.log(chathisText[i]);
-        item.textContent = `${chathisUser[i]}: ${chathisText[i]}`;
-        // messages.appendChild(item);
-        // item.textContent += `${chathisText[i]}`;
-        if(chathisUser[i]=== namenav.textContent){
-            item.style.textAlign = 'right';
-        }
-        messages.appendChild(item);
-        but.click();
-    };
+    // for(let i = 0; i < chathisUser.length; i++){
+    //     let item = document.createElement('li');
+    //     // console.log(chathisUser[i]);
+    //     // console.log(chathisText[i]);
+    //     item.textContent = `${chathisUser[i]}: ${chathisText[i]}`;
+    //     // messages.appendChild(item);
+    //     // item.textContent += `${chathisText[i]}`;
+    //     if(chathisUser[i]=== namenav.textContent){
+    //         item.style.textAlign = 'right';
+    //     }
+    //     messages.appendChild(item);
+    //     but.click();
+    // };
     
 // TODO: here 
     // chathisUser.forEach((e, i) => {
@@ -146,6 +147,8 @@ socket.on('newclientconnect', (data) => {
 socket.on('yoEvent', (words) => {
     let item = document.createElement('li');
     item.innerHTML = words.yup;
+    item.style.backgroundColor = '#FFC0CB';
+    item.style.color = '#000000';
     console.log(item);
     messages.appendChild(item);
 
@@ -173,10 +176,10 @@ socket.on('yoEvent', (words) => {
 socket.on('chat message', (msg, id, clients, userList) => {
 
     
-    userCount.textContent = 'test';
+    // userCount.textContent = 'test';
 
 
-    let span = document.createElement('span');
+    let di = document.createElement('div');
     let item = document.createElement('li');
     const name = id;
     // id = `user`;
@@ -192,14 +195,22 @@ socket.on('chat message', (msg, id, clients, userList) => {
     // console.log(namenav.trim() === id.trim());
     // console.log(socket.request.session.username);
 
-    item.textContent = `${id}: `;
-    messages.appendChild(item);
-    item.textContent += `${msg}`;
+    item.textContent = `${id}: ${msg}`;
+    // messages.appendChild(item);
+    // item.textContent += `${msg}`;
 
     if(id === namenav.textContent){
-        item.style.textAlign = 'right';
+        
+        di.appendChild(item);
+        di.style.textAlign = 'right';
+        
+        item.style.backgroundColor = 'limegreen';
+        item.style.borderRadius = '17px';
+        item.style.display = 'inline-flex';     
+    }else{
+        di.appendChild(item);
     }
-    messages.appendChild(item);
+    messages.appendChild(di);
     but.click();
 
     but.addEventListener('click',() => {

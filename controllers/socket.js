@@ -22,19 +22,19 @@ module.exports = (io) => {
         const id = socket.request.session.username;
         userList.push(id);
 
-        let chathis = await Chathistory.find({});
-        if (!chathis){
-            console.log('No text');
-        }else{
-            console.log(`length: ${chathis.length}`);
-        }
+        // let chathis = await Chathistory.find({});
+        // if (!chathis){
+        //     console.log('No text');
+        // }else{
+        //     console.log(`length: ${chathis.length}`);
+        // }
 
         
         // chathis.forEach(chat, () => {
         //     console.log(chat);
         // })
 
-        io.emit('userList', { userList, chathis });
+        io.emit('userList', { userList});
         // socket.on('adduser', (id) => {
         //     userList.push(id);
         // })
@@ -60,7 +60,12 @@ module.exports = (io) => {
         socket.broadcast.emit('newclientconnect', { say: `${clients} clients online 🎉`});
         socket.on('disconnect', () => {
             clients--;
-            userList.pop(id);
+
+            let index = userList.indexOf(id);
+            if(index > -1){
+                userList.splice(index, 1);
+            };
+            // userList.pop(id);
             io.emit('userList', { userList });
 
             socket.broadcast.emit('newclientconnect', { say: `${clients} clients online`});
@@ -69,7 +74,7 @@ module.exports = (io) => {
         setTimeout(() => {
             // socket.send('after 2 seconds');
             socket.emit('yoEvent',{ yup: 'Hello welcome to the Chatroom!'});
-        }, 2000);
+        }, 1000);
         
     
         socket.on('clientEvent', (data) => {

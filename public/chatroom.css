@@ -5,8 +5,8 @@ body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSyst
 #input:focus { outline: none; }
 #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
 
-#messages { list-style-type: none; margin: 0; padding: 0; }
-#messages > li { padding: 0.5rem 1rem; color:aliceblue; }
-#messages > li:nth-child(odd) { background: rgb(255,192,203, .4);  color:white;}
+#messages { list-style-type: none; margin: 0; padding: 0;}
+li { padding: 0.5rem 1rem; color:aliceblue;}
+li:nth-child(odd) { color:white;}
 
-/* background-color: #FFC0CB; */
+/* background-color: #FFC0CB; background: rgb(255,192,203, .4) */
